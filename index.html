@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación XV Años Heimy</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f9e0eb;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        /* Fondo de flores */
+        .flower-border {
+            position: fixed;
+            width: 120%;
+            height: 110%;
+            background-image: url('https://www.pngarts.com/files/2/Floral-PNG-Background-Image.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.8;
+        }
+
+        /* Sobre que ocupa toda la pantalla */
+        .envelope {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #f5d0e3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            transition: all 0.5s ease;
+            box-shadow: inset 0 0 50px rgba(235, 154, 192, 0.5);
+            overflow-y: auto; /* Scroll si es necesario */
+        }
+
+        /* Sello de lacre */
+        .wax-seal {
+            position: absolute;
+            bottom: 20%;
+            cursor: pointer;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #c0392b 30%, #a5281b 70%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3),
+                        inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+            z-index: 20;
+            transition: transform 0.3s;
+        }
+
+        .wax-seal:before {
+            content: "H";
+            font-family: 'Dancing Script', cursive;
+            font-size: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .wax-seal:hover {
+            transform: scale(1.1);
+        }
+
+        /* Texto en el sobre */
+        .envelope-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #eb9ac0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 150px;
+            text-align: center;
+        }
+
+        /* Invitación (se muestra al abrir) */
+        .invitation {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            min-height: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            box-sizing: border-box;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 5;
+            border: 15px solid transparent;
+            background-clip: padding-box;
+            background-image: linear-gradient(white, white), 
+                              linear-gradient(135deg, #eb9ac0, #d873a5);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+
+        .invitation-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Imagen de quinceañera */
+        .quinceanera-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #eb9ac0;
+            margin: 20px 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Texto de invitación */
+        .invitation h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #eb9ac0;
+            margin: 10px 0;
+        }
+
+        .invitation h2 {
+            font-size: 2rem;
+            color: #d873a5;
+            margin: 10px 0;
+        }
+
+        .invitation p {
+            color: #555;
+            margin: 8px 0;
+            font-size: 1.1rem;
+        }
+
+        .date, .place {
+            font-weight: 600;
+            color: #eb9ac0;
+            margin-top: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Botones */
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            min-width: 200px;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-maps {
+            background: #4285F4;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Cuenta regresiva */
+        #countdown {
+            font-size: 1.5rem;
+            color: #eb9ac0;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        /* Efecto cuando se abre */
+        .envelope.open {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .invitation.show {
+            display: block;
+            animation: fadeInUp 1s;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .invitation {
+                width: 95%;
+                padding: 20px;
+            }
+            
+            .invitation h1 {
+                font-size: 2.5rem;
+            }
+            
+            .btn {
+                padding: 12px 20px;
+                min-width: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flower-border"></div>
+    
+    <!-- Sobre que cubre toda la pantalla -->
+    <div class="envelope" id="envelope">
+        <div class="envelope-text">Los XV de Heimy</div>
+        <div class="wax-seal" id="waxSeal"></div>
+    </div>
+    
+    <!-- Invitación (se muestra al abrir) -->
+    <div class="invitation" id="invitation">
+        <div class="invitation-content">
+            <img src="https://i.imgur.com/LxQJvVm.jpg" alt="Heimy" class="quinceanera-img">
+            <h1>XV Años</h1>
+            <h2>Heimy</h2>
+            <p>Con mucha alegría te invito a celebrar</p>
+            <p>este momento tan especial en mi vida</p>
+            
+            <p class="date">18 de Octubre 2025</p>
+            <p class="place">a las 3 de la tarde (15 hrs)</p>
+            <p>Calle Nacional 20<br>Tlacomulco, Atoyatempan<br>Puebla</p>
+            
+            <div id="countdown"></div>
+            
+            <div class="btn-container">
+                <button id="confirmBtn" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Confirmar Asistencia
+                </button>
+                <button id="locationBtn" class="btn btn-maps">
+                    <i class="fab fa-google"></i> Ver Ubicación
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="bgMusic" loop>
+        <source src="invitacion.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        // Abrir sobre al hacer clic en el sello
+        const waxSeal = document.getElementById("waxSeal");
+        const envelope = document.getElementById("envelope");
+        const invitation = document.getElementById("invitation");
+        const bgMusic = document.getElementById("bgMusic");
+
+        waxSeal.addEventListener("click", function() {
+            envelope.classList.add("open");
+            setTimeout(() => {
+                invitation.classList.add("show");
+                // Reproducir música (con manejo de autoplay bloqueado)
+                bgMusic.play().catch(e => {
+                    console.log("Auto-play bloqueado, el usuario debe interactuar primero");
+                    // Mostrar un botón de play si falla
+                });
+                startCountdown();
+            }, 500);
+        });
+
+        // Cuenta regresiva
+        function startCountdown() {
+            const eventDate = new Date("2025-10-18T15:00:00").getTime();
+            
+            const countdown = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("countdown").innerHTML = 
+                    `Faltan:<br><span style="font-size:1.8rem">${days} días ${hours}h ${minutes}m ${seconds}s</span>`;
+                
+                if (distance < 0) {
+                    clearInterval(countdown);
+                    document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
+                }
+            }, 1000);
+        }
+
+        // Botón de WhatsApp
+        document.getElementById("confirmBtn").addEventListener("click", function() {
+            const phone = "521234567890"; // Cambiar por tu número
+            const message = "¡Heimy, confirmo mi asistencia a tus XV años! 💖🎉";
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
+        });
+
+        // Botón de Google Maps
+        document.getElementById("locationBtn").addEventListener("click", function() {
+            const address = "Calle+Nacional+20,+Tlacomulco,+Atoyatempan,+Puebla";
+            window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, "_blank");
+        });
+    </script>
+</body>
+</html>
