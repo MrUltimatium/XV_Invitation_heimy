@@ -126,6 +126,7 @@
         }
 
         .invitation-text {
+            font-family: 'Dancing Script', cursive;
             flex: 1;
             text-align: left;
         }
@@ -145,7 +146,7 @@
         /* Texto de invitación */
         .invitation h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: #eb9ac0;
             margin: 10px 0;
             text-align: center;
@@ -153,23 +154,26 @@
 
         .invitation h2 {
             font-family: 'Dancing Script', cursive;
-            font-size: 2rem;
+            font-size: 3rem;
             color: #d873a5;
             margin: 10px 0;
         }
 
         .invitation p {
+            font-family: 'Dancing Script', cursive;
             color: #555;
             margin: 8px 0;
-            font-size: 1.1rem;
+            font-size: 1.8rem;
             text-align: left;
         }
 
-        .date, .place, .subTitle {
+        .date, .place, .subTitle p{
+            font-family: 'Dancing Script', cursive;
             font-weight: 600;
-            color: #eb9ac0;
+            color: #000000;
             margin-top: 15px;
-            font-size: 1.3rem;
+            font-weight: bold;
+            font-size: 2.2rem;
         }
 
         /* Botones */
@@ -189,7 +193,7 @@
             gap: 10px;
             border: none;
             padding: 15px 25px;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s;
@@ -198,6 +202,7 @@
         }
 
         .btn-maps {
+            font-family: 'Dancing Script', cursive;
             background: #4285F4;
             color: white;
         }
@@ -209,7 +214,8 @@
 
         /* Cuenta regresiva */
         #countdown {
-            font-size: 1.5rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
             color: #eb9ac0;
             margin: 20px 0;
             font-weight: bold;
@@ -258,6 +264,7 @@
             }
             
             #countdown {
+                font-family: 'Dancing Script', cursive;
                 order: 2;
                 margin: 20px 0;
             }
@@ -357,7 +364,7 @@
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 
                 document.getElementById("countdown").innerHTML = 
-                    `No Faltes!<br>Será en:<br><span style="font-size:1.8rem">${days} días ${hours}h ${minutes}m ${seconds}s</span>`;
+                    `No Faltes!<br>Será en:<br><span style="font-size:1.8rem", >${days} días ${hours}h ${minutes}m ${seconds}s</span>`;
                 
                 if (distance < 0) {
                     clearInterval(countdown);
