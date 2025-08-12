@@ -74,9 +74,17 @@
         .envelope-text {
             font-family: 'Dancing Script', cursive;
             font-size: 2.5rem;
-            color: #eb9ac0;
+            color: #e73287;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             margin-bottom: 150px;
+            text-align: center;
+        }
+        .click-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #e73287;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
             text-align: center;
         }
 
@@ -269,8 +277,9 @@
 <body>
     <!-- Sobre que cubre toda la pantalla -->
     <div class="envelope" id="envelope">
-        <div class="envelope-text">Los XV de Heimy</div>
-        <div class="wax-seal" id="waxSeal"></div>
+        <div class="envelope-text">Mis XV, Heimy</div>
+        <div class="click-text">Clik Aquí ↓</div>
+        <p class="wax-seal" id="waxSeal"></p>
     </div>
     
     <!-- Invitación (se muestra al abrir) -->
@@ -282,11 +291,12 @@
                     <h2>De Heimy para ti:</h2>
                     <p>Con mucha alegría te invito a celebrar</p>
                     <p>este momento tan especial en mi vida</p>
-                    <p class="subTitle">Padre de la Quinciañera:</p>
+                    <p>Junto con:</p><br>
+                    <p class="subTitle">Mi Padre:</p>
                     <p>Jose Manuel Flores Rojas</p>
-                    <p class="subTitle">Madre de la Quinciañera</p>
+                    <p class="subTitle">Mi Madre:</p>
                     <p>Ana Yuriela Sánchez Hernández</p>
-                    <p class="subTitle">Madrina de la Quinciañera</p>
+                    <p class="subTitle">Y Mi Madrina:</p>
                     <p>Marlene Morales Morales</p>
                     <div style="height: 30px;"></div>
                     <p class="subTitle">Te Esperamos!!</p>
@@ -347,7 +357,7 @@
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 
                 document.getElementById("countdown").innerHTML = 
-                    `Faltan:<br><span style="font-size:1.8rem">${days} días ${hours}h ${minutes}m ${seconds}s</span>`;
+                    `No Faltes!<br>Será en:<br><span style="font-size:1.8rem">${days} días ${hours}h ${minutes}m ${seconds}s</span>`;
                 
                 if (distance < 0) {
                     clearInterval(countdown);
