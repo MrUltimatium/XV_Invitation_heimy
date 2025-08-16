@@ -16,7 +16,7 @@
             justify-content: center;
             align-items: flex-start;
             position: relative;
-            background-image: url('https://png.pngtree.com/png-clipart/20241030/original/pngtree-background-a-rose-png-image_16567269.png');
+            background-image: url('https://i.pinimg.com/originals/a1/16/55/a116554c35fab75cdfaff35097b272d6.gif');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -29,7 +29,10 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background-color: rgb(245, 208, 227);
+            background-image: url('https://raw.githubusercontent.com/MrUltimatium/XV_Invitation_heimy/refs/heads/main/imagenes/sobre.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -47,7 +50,7 @@
             cursor: pointer;
             width: 80px;
             height: 80px;
-            background: radial-gradient(circle, #c0392b 30%, #a5281b 70%);
+            background: radial-gradient(circle, #e75d9d 30%, #a5281b 70%);
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -62,7 +65,11 @@
             content: "H";
             font-family: 'Dancing Script', cursive;
             font-size: 40px;
-            color: rgba(255, 255, 255, 0.8);
+            color: #fff;
+            background-image: url('https://pa1.aminoapps.com/6387/f8df2866092ce0e31a3222001741625a6e2ebb90_hq.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
@@ -73,18 +80,18 @@
         /* Texto en el sobre */
         .envelope-text {
             font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            color: #e73287;
+            font-size: 3rem;
+            color: #e75d9d;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 150px;
+            margin-bottom: 70px;
             text-align: center;
         }
         .click-text {
             font-family: 'Dancing Script', cursive;
             font-size: 1.8rem;
-            color: #e73287;
+            color: #e75d9d;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 10px;
+            margin-bottom: 50px;
             text-align: center;
         }
 
@@ -118,6 +125,10 @@
             gap: 40px;
             height: 100%;
             flex-direction: column;
+            background-image: url('https://i.pinimg.com/originals/6b/11/77/6b117746cd976587d3f6fc9a39da16f6.gif');
+            background-size: 100%;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .invitation-main {
@@ -139,7 +150,7 @@
         }
 
         .invitation-image img {
-            max-width: 100%;
+            max-width: 90%;
             max-height: 400px;
         }
 
@@ -174,6 +185,15 @@
             margin-top: 15px;
             font-weight: bold;
             font-size: 2.2rem;
+        }
+
+        .names p{
+            font-family: 'Dancing Script', cursive;
+            font-weight: 600;
+            color: #eb9ac0;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 2rem;
         }
 
         /* Botones */
@@ -259,7 +279,7 @@
             }
             
             .invitation-image {
-                margin: 20px 0;
+                margin: 0px 0;
                 order: 1;
             }
             
@@ -284,7 +304,8 @@
 <body>
     <!-- Sobre que cubre toda la pantalla -->
     <div class="envelope" id="envelope">
-        <div class="envelope-text">Mis XV, Heimy</div>
+        <div style="height: 70px;"></div>
+        <div class="envelope-text">Mis XV<br>Heimy</div>
         <div class="click-text">Clik Aquí ↓</div>
         <p class="wax-seal" id="waxSeal"></p>
     </div>
@@ -294,31 +315,35 @@
         <div class="invitation-content">
             <div class="invitation-main">
                 <div class="invitation-text">
-                    <h1>XV Años</h1>
-                    <h2>De Heimy para ti:</h2>
+                    <div id="countdown"></div><br>
+                    <h1>Mis XV Años</h1>
+                    <h2>Heimy</h2>
                     <p>Con mucha alegría te invito a celebrar</p>
                     <p>este momento tan especial en mi vida</p>
                     <p>Junto con:</p><br>
                     <p class="subTitle">Mi Padre:</p>
-                    <p>Jose Manuel Flores Rojas</p>
+                    <p style="color:#eb9ac0">Jose Manuel Flores Rojas</p>
                     <p class="subTitle">Mi Madre:</p>
-                    <p>Ana Yuriela Sánchez Hernández</p>
+                    <p style="color:#eb9ac0">Ana Yuriela Sánchez Hernández</p>
                     <p class="subTitle">Y Mi Madrina:</p>
-                    <p>Marlene Morales Morales</p>
+                    <p style="color:#eb9ac0">Marlene Morales Morales</p>
                     <div style="height: 30px;"></div>
                     <p class="subTitle">Te Esperamos!!</p>
-                    <p class="date">El día 18 de Octubre 2025</p>
-                    <p class="place">a las 3 de la tarde (15 hrs)</p>
+                    <p class="date"><span style="color: #eb9ac0;">El día 18 de Octubre de 2025</span></p>
+                    <p class="subTitle">La Celebración Eucarística se llevará a cabo a las 13:00 Hrs</p>
+                    <p class="subTitle">En la Iglesia de Nuestra Señora Santa Ana</p>
+                    <p class="subTitle">(En Santa Ana, Coapan)</p>
+                    <p class="place">El evento se realizará a las 15:00 hrs</p>
                     <p>En la Calle Nacional 20<br>Tlacomulco, Atoyatempan<br>Puebla</p>
                 </div>
                 
                 <div class="invitation-image">
                     <!-- Imagen decorativa -->
-                    <img src="https://i.pinimg.com/originals/86/eb/ec/86ebeca551e8f6d1c1429962075be36d.png" alt="Decoración XV Años">
+                    <img src="https://raw.githubusercontent.com/MrUltimatium/XV_Invitation_heimy/refs/heads/main/imagenes/quinciañera.png" alt="Decoración XV Años">
                 </div>
             </div>
             
-            <div id="countdown"></div>
+            <p style="color:#eb9ac0">¡No Faltes!</p>
             
             <div class="btn-container">
                 <button id="locationBtn" class="btn btn-maps">
@@ -364,7 +389,7 @@
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 
                 document.getElementById("countdown").innerHTML = 
-                    `No Faltes!<br>Será en:<br><span style="font-size:1.8rem", >${days} días ${hours}h ${minutes}m ${seconds}s</span>`;
+                    `¡Quiero Celebrar<br>Contigo! en:<br><span style="font-size:1.8rem"><span style="color:#000000">${days} días ${hours}h ${minutes}m ${seconds}s</span></span>`;
                 
                 if (distance < 0) {
                     clearInterval(countdown);
@@ -375,7 +400,7 @@
 
         // Botón de Google Maps
         document.getElementById("locationBtn").addEventListener("click", function() {
-            window.open(`https://www.google.com/maps/@18.8170635,-97.8964955,72m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D`, "_blank");
+            window.open(`https://www.google.com/maps/dir//18.817606,-97.8962846/@18.8177964,-97.8960204,232m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D`, "_blank");
         });
     </script>
 </body>
